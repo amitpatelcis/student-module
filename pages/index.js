@@ -14,11 +14,8 @@ export default function WelcomePage() {
             </div>
             <div className="text-[#673ab7] font-bold text-2xl my-4">Hi, Welcome Back</div>
             <div className="text-slate-400 text-lg my-4">Please select one to continue</div>
-            <div><Link href="/user/admin/login"><button className="w-full py-2 text-white bg-[#673ab7] rounded font-medium my-4 hover:bg-[#563199]">Admin</button></Link></div> 
+
             <div><Link href="/user/student/login"><button className="w-full py-2 text-white bg-[#673ab7] rounded font-medium my-4 hover:bg-[#563199]">Student</button></Link></div> 
-            <div><Link href="/user/teacher/login"><button className="w-full py-2 text-white bg-[#673ab7] rounded font-medium my-4 hover:bg-[#563199]">Teacher</button></Link></div> 
-            <div><Link href="/user/counsellor/login"><button className="w-full py-2 text-white bg-[#673ab7] rounded font-medium my-4 hover:bg-[#563199]">Counsellor</button></Link></div> 
-            <div><Link href="/user/b2b/login"><button className="w-full py-2 text-white bg-[#673ab7] rounded font-medium my-4 hover:bg-[#563199]">B2B</button></Link></div> 
         </div>
       </div>
     </>
