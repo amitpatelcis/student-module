@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faGauge,faMessage,faChalkboard,faChalkboardUser,faPenToSquare,faCalendarCheck,faGraduationCap, faPeopleArrowsLeftRight} from '@fortawesome/free-solid-svg-icons';
-import styles from "../../../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 import Link from 'next/link';
 
 export default function Sidebar() {
@@ -10,7 +10,7 @@ export default function Sidebar() {
 
           <div className='border-b p-2'>
             <div className='text-slate-900 mb-3 font-semibold'>Dashboard</div>
-            <Link href="/user/student/dashboard">
+            <Link href="/student/dashboard">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
               <div className='flex items-center'><FontAwesomeIcon icon={faGauge}/></div>
               <div className='flex items-center'>Dashboard</div>
@@ -20,7 +20,7 @@ export default function Sidebar() {
 
           <div className='border-b p-2'>
             <div className='text-slate-900 mb-3 font-semibold'>Task Management</div>
-            <Link href="/user/student/schedule">
+            <Link href="/student/schedule">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
               <div className='flex items-center'><FontAwesomeIcon icon={faChalkboardUser}/></div>
               <div className='flex items-center'>Schedule Demo</div>
