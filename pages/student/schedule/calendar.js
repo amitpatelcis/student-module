@@ -284,21 +284,19 @@ const Calendar = () => {
         <Typography align="center" variant="h6" gutterBottom component="div">
           Update Event
         </Typography>
-        <div style={{ padding: "20px", width: "500px" }}>
+        <div style={{ padding: "20px", width: "600px" }}>
           <Grid
             container
-            spacing={2}
-            direction="column"
             alignItems="center"
             justifyContent="center"
-            sx={{ mt: 2 }}
+            sx={{ mt: 4, ml: 1 }}
           >
-            <Grid item sm={12} md={12} lg={12}>
+            <Grid item sm={12} md={6} lg={6}>
               <Button variant="contained" size="large">
                 Request To Cancel
               </Button>
             </Grid>
-            <Grid item sm={12} md={12} lg={12}>
+            <Grid item sm={12} md={6} lg={6}>
               <Button
                 variant="contained"
                 color="secondary"

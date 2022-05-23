@@ -20,7 +20,7 @@ export default function Sidebar() {
             <Link href="#">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
               <div className='flex items-center'><FontAwesomeIcon icon={faMessage}/></div>
-              <div className='flex items-center'>Start Class</div>
+              <div className='flex items-center'>Join Class</div>
             </div>
             </Link>
             <Link href="#">
@@ -68,25 +68,7 @@ export default function Sidebar() {
             <Link href="#">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
               <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
-              <div className='flex items-center'>Cancel Class</div>
-            </div>
-            </Link>
-            <Link href="#">
-            <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
-              <div className='flex items-center'>Request Changes</div>
-            </div>
-            </Link>
-            <Link href="#">
-            <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
               <div className='flex items-center'>Upgrade Sessions</div>
-            </div>
-            </Link>
-            <Link href="#">
-            <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
-              <div className='flex items-center'>Homework - upload</div>
             </div>
             </Link>
             <Link href="#">
@@ -104,12 +86,6 @@ export default function Sidebar() {
             <Link href="#">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
               <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
-              <div className='flex items-center'>Maintains profiles</div>
-            </div>
-            </Link>
-            <Link href="#">
-            <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
               <div className='flex items-center'>Receive assessment and progress report</div>
             </div>
             </Link>
@@ -117,12 +93,6 @@ export default function Sidebar() {
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
               <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
               <div className='flex items-center'>View class snippets</div>
-            </div>
-            </Link>
-            <Link href="#">
-            <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
-              <div className='flex items-center'>views projects</div>
             </div>
             </Link>
             <Link href="#">
