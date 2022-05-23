@@ -37,25 +37,25 @@ export default function Sidebar() {
             </Link>
             <Link href="#">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faPenToSquare}/></div>
               <div className='flex items-center'>Track Progress</div>
             </div>
             </Link>
             <Link href="#">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faGraduationCap}/></div>
               <div className='flex items-center'>Contact Trainer</div>
             </div>
             </Link>
             <Link href="#">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faPeopleArrowsLeftRight}/></div>
               <div className='flex items-center'>Contact Customer Care</div>
             </div>
             </Link>
             <Link href="#">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faCalendarCheck}/></div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faGauge}/></div>
               <div className='flex items-center'>Review Kapable Session</div>
             </div>
             </Link>
