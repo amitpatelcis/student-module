@@ -127,7 +127,7 @@ export default function Navbar(props) {
           }}
         >
           <Box sx={{ ml: 2, mt: 3, mr: 3, mb: 3 }}>
-            <Link href={"/student/edit-profile"}>
+            <Link href={"/student/view-profile"}>
               <Typography className={classes.option}>
                 <FontAwesomeIcon
                   className={classes.icon}
@@ -136,7 +136,7 @@ export default function Navbar(props) {
                 View Profile
               </Typography>
             </Link>
-            <Link href={"/student/view-profile"}>
+            <Link href={"/student/edit-profile"}>
               <Typography className={classes.option}>
                 <FontAwesomeIcon className={classes.icon} icon={faChalkboard} />{" "}
                 Update Profile
