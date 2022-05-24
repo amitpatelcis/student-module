@@ -142,7 +142,7 @@ export default function Navbar(props) {
                 Update Profile
               </Typography>
             </Link>
-            <Link href={"/view"}>
+            <Link href={"/student/login"}>
               <Typography className={classes.option}>
                 <FontAwesomeIcon
                   className={classes.icon}
