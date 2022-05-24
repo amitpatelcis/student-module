@@ -1,37 +1,194 @@
-import Logo from "../../assets/logo.png";
-import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import { Button, Grid, InputLabel } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
 
+const useStyles = makeStyles((theme) => ({
+  brand_name: {
+    fontSize: "14px !important",
+    color: "grey !important",
+    fontWeight: "700 !important",
+  },
+  left_section: {
+    background: "#fff",
+    padding: "50px",
+  },
+  login_part: {
+    marginTop: "100px",
+  },
+  title_welcome: {
+    fontSize: "1.5rem !important",
+    lineHeight: "2rem !important",
+    fontWeight: "700 !important",
+    marginTop: "1rem !important",
+    marginBottom: "0 !important",
+  },
+  title_helper: {
+    fontSize: "13px !important",
+    color: "grey !important",
+    cursor: "pointer",
+  },
+  input_section: {
+    marginTop: "30px",
+    marginBottom: "20px",
+  },
+  label: {
+    fontSize: "12px !important",
+    fontWeight: "700 !important",
+    color: "#651565 !important",
+    marginBottom: "3px",
+  },
+  textField: {
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: "2px solid #651565 !important",
+      borderRadius: "10px !important",
+      fontSize: "12px",
+      color: "silver",
+    },
+  },
+  button: {
+    backgroundColor: "#651565 !important",
+    textTransform: "capitalize !important",
+    fontWeight: "600 !important",
+  },
+  linkTxt: {
+    color: "#651565 !important",
+    cursor: "pointer",
+  },
+  right_section: {
+    // backgroundImage:"url('/images/user.jpg')",
+    // backgroundSize:"cover",
+    // backgroundRepeat:"no-repeat",
+    width: "100% !important",
+    height: "100vh",
+    [theme.breakpoints.down("md")]: {
+      height: "100%",
+    },
+  },
+  right_content: {
+    position: "relative !important",
+  },
+  right_text: {
+    position: "absolute !important",
+    bottom: "20px !important",
+    color: "white !important",
+    width: "50% !important",
+    textAlign: "left !important",
+    marginLeft: "30px !important",
+    lineHeight: "45px !important",
+    fontWeight: "normal !important",
+  },
+}));
 export default function Login() {
   const router = useRouter();
+  const classes = useStyles();
 
-  const studentLogin=()=>{
+  const studentLogin = () => {
     router.push("./dashboard");
-  }
+  };
 
   return (
     <>
-        <div className="bg-[#e3f2fd] min-h-screen p-12 flex justify-center text-slate-800 items-center">
-          <div className="bg-white p-10 rounded-lg text-center w-full h-full md:w-1/2 lg:w-1/3 border border-[#bee1fa]">
-              <div className="font-bold text-lg my-4 flex justify-center items-center gap-1">
-                <div className="flex justify-center"><Image src={Logo} width="25" height="25"/></div>
-                <div className="flex justify-center">KAPABLE</div>
-              </div>
-              <div className="text-[#673ab7] font-bold text-2xl my-4">Student Login</div>
-              <div className="text-slate-400 text-lg my-4">Enter your credentials to continue</div>
-              <div className="text-left my-4">
-                <label className="text-slate-400 text-sm">Enter your email address
-                <input id="email" type="email" className="w-full py-2 px-2 bg-[#fafafa] rounded-lg border border-slate-300 outline-[#673ab7] text-base text-[#673ab7]" placeholder="abc123@gmail.com"/>
-                </label>
-              </div>
-              <div className="text-left my-4">
-                <label className="text-slate-400 text-sm">Password
-                <input type="password" className="w-full py-2 px-2 bg-[#fafafa] rounded-lg border border-slate-300 outline-[#673ab7] text-base text-[#673ab7]"/>
-                </label>
-              </div>
-              <div><button className="w-full py-2 text-white bg-[#673ab7] rounded font-medium my-4 hover:bg-[#563199]" onClick={studentLogin}>Login</button></div>
-          </div>
-        </div>
+      <Grid>
+        <Grid container>
+          <Grid item sm={12} md={4} lg={4}>
+            <Grid className={classes.left_section}>
+              <Typography
+                className={classes.brand_name}
+                variant="subtitle1"
+                gutterBottom
+                component="div"
+                textAlign={"left"}
+                // textAlign={"left"}
+              >
+                kaizen Academy
+              </Typography>
+              <Grid className={classes.login_part}>
+                <Typography
+                  className={classes.title_welcome}
+                  variant="h5"
+                  gutterBottom
+                  component="div"
+                  // textAlign={"left"}
+                >
+                  Wellcome back
+                </Typography>
+                <Typography
+                  className={classes.title_helper}
+                  variant="subtitle1"
+                  gutterBottom
+                  component="div"
+                  // textAlign={"left"}
+                >
+                  Login to continue
+                </Typography>
+                <Grid className={classes.input_section}>
+                  <InputLabel
+                    htmlFor="input-with-icon-adornment"
+                    className={classes.label}
+                  >
+                    Email Address / Mobile
+                  </InputLabel>
+                  <TextField
+                    name="email"
+                    size="small"
+                    fullWidth
+                    className={classes.textField}
+                  />
+                </Grid>
+
+                <Grid>
+                  <Button
+                    variant="contained"
+                    fullWidth
+                    className={classes.button}
+                    onClick={studentLogin}
+                  >
+                    Continue
+                  </Button>
+                  <Typography
+                    className={classes.title_helper}
+                    variant="subtitle1"
+                    gutterBottom
+                    component="div"
+                    sx={{ mt: 2 }}
+                    // textAlign={"left"}
+                  >
+                    By continuing, you agree to kaizen's{" "}
+                    <span className={classes.linkTxt}>Condition of Use</span>{" "}
+                    and
+                    <span className={classes.linkTxt}> Privacy Notice</span>.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item sm={12} md={8} lg={8}>
+            <Grid>
+              <img
+                src="/images/user.jpg"
+                alt="user"
+                className={classes.right_section}
+              />
+              <Grid className={classes.right_content}>
+                <Typography
+                  className={classes.right_text}
+                  variant="h5"
+                  gutterBottom
+                  component="div"
+                  // textAlign={"left"}
+                >
+                  "Education is most powerfull weapon which you can use to
+                  change the world""
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </>
-  )
+  );
 }

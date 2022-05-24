@@ -1,9 +1,11 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import ClientOnly from "./ClientOnly";
+import { createTheme, ThemeProvider, themeOption } from "@mui/material";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
+const theme = createTheme(themeOption);
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,10 +17,11 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-
-      <ClientOnly>
-        <Component {...pageProps} />
-      </ClientOnly>
+      <ThemeProvider theme={theme}>
+        <ClientOnly>
+          <Component {...pageProps} />
+        </ClientOnly>
+      </ThemeProvider>
     </>
   );
 }
