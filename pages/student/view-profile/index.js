@@ -20,14 +20,16 @@ const useStyles = makeStyles(() => ({
     marginBottom: "5px",
   },
   title: {
-    fontSize: "22px !important",
-    fontFamily: "fantasy !important",
+    fontSize: "0.990rem!important",
+    fontWeight: "500 !important",
     color: "#6792bf !important",
+    lineHeight: "2.5rem !important",
   },
   text: {
-    fontSize: "22px !important",
-    fontFamily: "fantasy !important",
+    fontSize: "0.990rem!important",
     color: "#7c7c7c !important",
+    fontWeight: "500 !important",
+    lineHeight: "2.5rem !important",
   },
 }));
 

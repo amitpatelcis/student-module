@@ -81,6 +81,7 @@ const EditProfile = () => {
                   id="outlined-error"
                   label="Mobile Number"
                   defaultValue=""
+                  type="number"
                 />
               </div>
               <div>
