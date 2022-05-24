@@ -11,15 +11,15 @@ export default function Sidebar() {
 
           <div className='border-b p-2'>
             <div className='text-slate-900 mb-3 font-semibold'>Menus</div>
+            <Link href="student/dashboard">
+            <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
+              <div className='flex items-center'><FontAwesomeIcon icon={faMessage}/></div>
+              <div className='flex items-center'>Dashboard</div>
+            </div>
+            </Link>
             <Link href="/student/schedule">
             <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
               <div className='flex items-center'><FontAwesomeIcon icon={faChalkboardUser}/></div>
-              <div className='flex items-center'>Schedule Demo</div>
-            </div>
-            </Link>
-            <Link href="#">
-            <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 pl-6 cursor-pointer mb-1">
-              <div className='flex items-center'><FontAwesomeIcon icon={faMessage}/></div>
               <div className='flex items-center'>Join Class</div>
             </div>
             </Link>
