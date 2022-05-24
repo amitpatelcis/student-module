@@ -16,14 +16,20 @@ const useStyles = makeStyles(() => ({
   form: {
     background: "#fff",
     padding: "30px",
+    marginTop: "30px",
     borderRadius: "10px",
   },
   userImg: {
-    width: "100px",
-    height: "100px",
-    borderRadius: "100%",
-    marginLeft: "4px",
-    marginBottom: "5px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "10px",
+    marginTop: "8px",
+  },
+  field_holder: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -145,27 +151,32 @@ const EditProfile = () => {
         style={sidebarOpen ? { paddingLeft: "18rem" } : { paddingLeft: "1rem" }}
       >
         <div className="bg-[#e3f2fd] h-full rounded-t-lg p-4">
-          <Grid container justifyContent={"center"} alignItems={"center"}>
-            <Box
-              className={classes.form}
-              component="form"
-              sx={{
-                "& .MuiTextField-root": { m: 1, width: "25ch" },
-                boxShadow: 4,
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <div>
-                <Grid container justifyContent={"center"} alignItems="center">
+          <Box
+            className={classes.form}
+            component="form"
+            sx={{
+              "& .MuiTextField-root": { m: 1, width: "25ch" },
+              boxShadow: 4,
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <Grid container>
+              <Grid item lg={5} md={5} sm={12}>
+                <div>
+                  <img
+                    className={classes.userImg}
+                    src="/images/user.jpg"
+                    alt="user"
+                  />
+                </div>
+                <Grid
+                  container
+                  justifyContent={"center"}
+                  alignItems="center"
+                  sx={{ m: 2 }}
+                >
                   <Grid item>
-                    <div>
-                      <img
-                        className={classes.userImg}
-                        src="/images/user.jpg"
-                        alt="user"
-                      />
-                    </div>
                     <Button
                       variant="contained"
                       color="secondary"
@@ -182,93 +193,102 @@ const EditProfile = () => {
                     </Button>
                   </Grid>
                 </Grid>
-              </div>
-              <div>
-                <TextField
-                  id="outlined-error"
-                  label="Email ID"
-                  defaultValue=""
-                  name="email"
-                  onChange={handleChange}
-                />
-                <TextField
-                  id="outlined-error"
-                  label="Mobile Number"
-                  defaultValue=""
-                  type="number"
-                  name="mobile"
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <TextField
-                  id="outlined-error"
-                  label="Parent Name"
-                  defaultValue=""
-                  name="parent_name"
-                  onChange={handleChange}
-                />
-                <TextField
-                  id="outlined-error"
-                  label="Parents Whatsapp Mobile Number"
-                  defaultValue=""
-                  type="number"
-                  name="parents_whatsapp_mobile"
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <TextField
-                  id="outlined-error"
-                  label="Students Name"
-                  defaultValue=""
-                  name="student_name"
-                  onChange={handleChange}
-                />
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DatePicker
-                    disableFuture
-                    label="Student DOB"
-                    openTo="year"
-                    views={["year", "month", "day"]}
-                    value={formData.dob}
-                    onChange={(newValue) => {
-                      setFormdata({ dob: newValue });
-                    }}
-                    renderInput={(params) => <TextField {...params} />}
-                  />
-                </LocalizationProvider>
-              </div>
-              <div>
-                <TextField
-                  id="outlined-error"
-                  label="Student's Grade in school"
-                  defaultValue=""
-                  name="student_grade"
-                  onChange={handleChange}
-                />
-                <TextField
-                  id="Address"
-                  label="Address"
-                  defaultValue=""
-                  name="address"
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <Grid container justifyContent={"right"} alignItems={"center"}>
-                  <Button
-                    sx={{ mr: 1 }}
-                    variant="contained"
-                    component="label"
-                    onClick={handleSubmit}
-                  >
-                    Submit
-                  </Button>
+              </Grid>
+              <Grid item lg={7} md={7} sm={12}>
+                <Grid>
+                  <div className={classes.field_holder}>
+                    <TextField
+                      id="outlined-error"
+                      label="Email ID"
+                      defaultValue=""
+                      name="email"
+                      onChange={handleChange}
+                    />
+                    <TextField
+                      id="outlined-error"
+                      label="Mobile Number"
+                      defaultValue=""
+                      type="number"
+                      name="mobile"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className={classes.field_holder}>
+                    <TextField
+                      id="outlined-error"
+                      label="Parent Name"
+                      defaultValue=""
+                      name="parent_name"
+                      onChange={handleChange}
+                    />
+                    <TextField
+                      id="outlined-error"
+                      label="Parents Whatsapp Mobile Number"
+                      defaultValue=""
+                      type="number"
+                      name="parents_whatsapp_mobile"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className={classes.field_holder}>
+                    <TextField
+                      id="outlined-error"
+                      label="Students Name"
+                      defaultValue=""
+                      name="student_name"
+                      onChange={handleChange}
+                    />
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                      <DatePicker
+                        disableFuture
+                        label="Student DOB"
+                        openTo="year"
+                        views={["year", "month", "day"]}
+                        value={formData.dob}
+                        onChange={(newValue) => {
+                          setFormdata({ dob: newValue });
+                        }}
+                        renderInput={(params) => <TextField {...params} />}
+                      />
+                    </LocalizationProvider>
+                  </div>
+                  <div className={classes.field_holder}>
+                    <TextField
+                      id="outlined-error"
+                      label="Student's Grade in school"
+                      defaultValue=""
+                      name="student_grade"
+                      onChange={handleChange}
+                    />
+                    <TextField
+                      id="Address"
+                      label="Address"
+                      defaultValue=""
+                      name="address"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className={classes.field_holder}>
+                    <Grid
+                      container
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      sx={{ m: 2 }}
+                    >
+                      <Button
+                        sx={{ mr: 1 }}
+                        variant="contained"
+                        component="label"
+                        onClick={handleSubmit}
+                      >
+                        Submit
+                      </Button>
+                    </Grid>
+                  </div>
                 </Grid>
-              </div>
-            </Box>
-          </Grid>
+              </Grid>
+            </Grid>
+          </Box>
         </div>
       </div>
 
