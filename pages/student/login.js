@@ -4,6 +4,8 @@ import { Button, Grid, InputLabel } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChalkboard } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
   brand_name: {
@@ -58,9 +60,11 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   right_section: {
-    // backgroundImage:"url('/images/user.jpg')",
-    // backgroundSize:"cover",
-    // backgroundRepeat:"no-repeat",
+    [theme.breakpoints.down("md")]: {
+      padding: "50px",
+    },
+  },
+  right_img: {
     width: "100% !important",
     height: "100vh",
     [theme.breakpoints.down("md")]: {
@@ -74,11 +78,20 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute !important",
     bottom: "20px !important",
     color: "white !important",
-    width: "50% !important",
+    width: "43% !important",
     textAlign: "left !important",
     marginLeft: "30px !important",
     lineHeight: "45px !important",
     fontWeight: "normal !important",
+    letterSpacing: "1px",
+    [theme.breakpoints.down("md")]: {
+      width: "80% !important",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "70% !important",
+      fontSize: "1.2rem !important",
+      lineHeight: "35px !important",
+    },
   },
 }));
 export default function Login() {
@@ -91,100 +104,97 @@ export default function Login() {
 
   return (
     <>
-      <Grid>
-        <Grid container>
-          <Grid item sm={12} md={4} lg={4}>
-            <Grid className={classes.left_section}>
+      <Grid container>
+        <Grid item sm={12} md={4} lg={4}>
+          <Grid className={classes.left_section}>
+            <Typography
+              className={classes.brand_name}
+              variant="subtitle1"
+              gutterBottom
+              component="div"
+              textAlign={"left"}
+              // textAlign={"left"}
+            >
+              <FontAwesomeIcon icon={faChalkboard} /> kaizen Academy
+            </Typography>
+            <Grid className={classes.login_part}>
               <Typography
-                className={classes.brand_name}
+                className={classes.title_welcome}
+                variant="h5"
+                gutterBottom
+                component="div"
+                // textAlign={"left"}
+              >
+                Wellcome back
+              </Typography>
+              <Typography
+                className={classes.title_helper}
                 variant="subtitle1"
                 gutterBottom
                 component="div"
-                textAlign={"left"}
                 // textAlign={"left"}
               >
-                kaizen Academy
+                Login to continue
               </Typography>
-              <Grid className={classes.login_part}>
-                <Typography
-                  className={classes.title_welcome}
-                  variant="h5"
-                  gutterBottom
-                  component="div"
-                  // textAlign={"left"}
+              <Grid className={classes.input_section}>
+                <InputLabel
+                  htmlFor="input-with-icon-adornment"
+                  className={classes.label}
                 >
-                  Wellcome back
-                </Typography>
+                  Email Address / Mobile
+                </InputLabel>
+                <TextField
+                  name="email"
+                  size="small"
+                  fullWidth
+                  className={classes.textField}
+                />
+              </Grid>
+
+              <Grid>
+                <Button
+                  variant="contained"
+                  fullWidth
+                  className={classes.button}
+                  onClick={studentLogin}
+                >
+                  Continue
+                </Button>
                 <Typography
                   className={classes.title_helper}
                   variant="subtitle1"
                   gutterBottom
                   component="div"
+                  sx={{ mt: 2 }}
                   // textAlign={"left"}
                 >
-                  Login to continue
+                  By continuing, you agree to kaizen's{" "}
+                  <span className={classes.linkTxt}>Condition of Use</span> and
+                  <span className={classes.linkTxt}> Privacy Notice</span>.
                 </Typography>
-                <Grid className={classes.input_section}>
-                  <InputLabel
-                    htmlFor="input-with-icon-adornment"
-                    className={classes.label}
-                  >
-                    Email Address / Mobile
-                  </InputLabel>
-                  <TextField
-                    name="email"
-                    size="small"
-                    fullWidth
-                    className={classes.textField}
-                  />
-                </Grid>
-
-                <Grid>
-                  <Button
-                    variant="contained"
-                    fullWidth
-                    className={classes.button}
-                    onClick={studentLogin}
-                  >
-                    Continue
-                  </Button>
-                  <Typography
-                    className={classes.title_helper}
-                    variant="subtitle1"
-                    gutterBottom
-                    component="div"
-                    sx={{ mt: 2 }}
-                    // textAlign={"left"}
-                  >
-                    By continuing, you agree to kaizen's{" "}
-                    <span className={classes.linkTxt}>Condition of Use</span>{" "}
-                    and
-                    <span className={classes.linkTxt}> Privacy Notice</span>.
-                  </Typography>
-                </Grid>
               </Grid>
             </Grid>
           </Grid>
+        </Grid>
 
-          <Grid item sm={12} md={8} lg={8}>
-            <Grid>
-              <img
-                src="/images/user.jpg"
-                alt="user"
-                className={classes.right_section}
-              />
-              <Grid className={classes.right_content}>
-                <Typography
-                  className={classes.right_text}
-                  variant="h5"
-                  gutterBottom
-                  component="div"
-                  // textAlign={"left"}
-                >
-                  "Education is most powerfull weapon which you can use to
-                  change the world""
-                </Typography>
-              </Grid>
+        <Grid item sm={12} md={8} lg={8}>
+          <Grid className={classes.right_section}>
+            <img
+              src="/images/login_bg.jpg"
+              alt="user"
+              className={classes.right_img}
+            />
+            <Grid className={classes.right_content}>
+              <Typography
+                className={classes.right_text}
+                variant="h5"
+                gutterBottom
+                component="div"
+                // textAlign={"left"}
+              >
+                "Education is most powerfull weapon which you can use to change
+                the world""
+              </Typography>
             </Grid>
           </Grid>
         </Grid>
