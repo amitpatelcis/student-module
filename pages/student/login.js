@@ -279,16 +279,42 @@ export default function Login() {
                 )}
 
                 {/* OTP section */}
-                <Grid
-                  container
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                  sx={{ mt: 1, mb: 2 }}
-                >
-                  <Grid item lg={5} md={5}>
-                    <hr />
-                  </Grid>
-                  <Grid item lg={2} md={2}>
+                {screenTime && (
+                  <>
+                    <Grid
+                      container
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      sx={{ mt: 1, mb: 2 }}
+                    >
+                      <Grid item lg={5} md={5}>
+                        <hr />
+                      </Grid>
+                      <Grid item lg={2} md={2}>
+                        <Typography
+                          className={classes.title_helper}
+                          variant="subtitle1"
+                          gutterBottom
+                          component="div"
+                          textAlign={"center"}
+                          sx={{ mt: 1 }}
+                          // textAlign={"left"}
+                        >
+                          Or
+                        </Typography>
+                      </Grid>
+                      <Grid item lg={5} md={5}>
+                        <hr />
+                      </Grid>
+                    </Grid>
+                    <Button
+                      variant="contained"
+                      fullWidth
+                      className={classes.otp_button}
+                      onClick={studentLogin}
+                    >
+                      Get an OTP on your phone
+                    </Button>
                     <Typography
                       className={classes.title_helper}
                       variant="subtitle1"
@@ -298,32 +324,10 @@ export default function Login() {
                       sx={{ mt: 1 }}
                       // textAlign={"left"}
                     >
-                      Or
+                      Manage and Data rates may apply.
                     </Typography>
-                  </Grid>
-                  <Grid item lg={5} md={5}>
-                    <hr />
-                  </Grid>
-                </Grid>
-                <Button
-                  variant="contained"
-                  fullWidth
-                  className={classes.otp_button}
-                  onClick={studentLogin}
-                >
-                  Get an OTP on your phone
-                </Button>
-                <Typography
-                  className={classes.title_helper}
-                  variant="subtitle1"
-                  gutterBottom
-                  component="div"
-                  textAlign={"center"}
-                  sx={{ mt: 1 }}
-                  // textAlign={"left"}
-                >
-                  Manage and Data rates may apply.
-                </Typography>
+                  </>
+                )}
               </Grid>
             </Grid>
           </Grid>

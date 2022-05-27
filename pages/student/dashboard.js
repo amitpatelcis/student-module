@@ -149,10 +149,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600 !important",
     padding: "8px 25px !important",
     position: "relative",
-    top: "155px",
+    top: "160px",
   },
   calendar_section: {
     paddingLeft: "24px",
+    marginTop:"30px",
     [theme.breakpoints.down("sm")]: {
       paddingLeft: "0",
     },
@@ -422,7 +423,7 @@ export default function Dashboard() {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={12} md={6} lg={6}>
-                <Box sx={{ boxShadow: 1, p: 2, borderRadius: 3 }}>
+                <Box sx={{ boxShadow: 1, p: 3, borderRadius: 3 }}>
                   <Typography
                     variant="subtitle1"
                     gutterBottom
@@ -463,7 +464,7 @@ export default function Dashboard() {
                     </span>
                   </Typography>
                 </Box>
-                <Box sx={{ boxShadow: 1, p: 2, borderRadius: 3, mt: 5 }}>
+                <Box sx={{ boxShadow: 1, p: 3, borderRadius: 3, mt: 5 }}>
                   <Typography
                     variant="subtitle1"
                     gutterBottom
@@ -589,7 +590,8 @@ export default function Dashboard() {
           </Grid>
         </Grid>
 
-        <Grid container sx={{ boxShadow: 1, p: 2, borderRadius: 3, m: 3 }}>
+        <Grid className={classes.calendar_section}>
+        <Grid container sx={{ boxShadow: 1, p: 2, borderRadius: 3, }}>
           <Grid item md={6} lg={6} sm={6}>
             <Box>
               <Typography
@@ -682,6 +684,7 @@ export default function Dashboard() {
               </Grid>
             </Grid>
           </Grid>
+        </Grid>
         </Grid>
       </div>
     </>
