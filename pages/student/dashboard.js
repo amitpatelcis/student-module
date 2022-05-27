@@ -24,11 +24,25 @@ import AvTimerIcon from "@mui/icons-material/AvTimer";
 import PanToolIcon from "@mui/icons-material/PanTool";
 import Avatar from "@mui/material/Avatar";
 import { Line } from "rc-progress";
+import Card from "@mui/material/Card";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const useStyles = makeStyles((theme) => ({
   top_section: {
     background: "#f3e8f39c",
     padding: "20px 30px",
+  },
+  explorer: {
+    background: "black !important",
+    color: "white !important",
+    padding: "5px 13px !important",
+    fontSize: "14px !important",
+    fontWeight: " 500 !important",
+    borderRadius: "7px !important",
+    position: "relative !important",
+    bottom: "22px !important",
   },
   name: {
     color: "#7f437f",
@@ -52,9 +66,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "80px",
   },
   sub_box_hepler: {
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
+    display: "flex !important",
+    justifyContent: "flex-end !important",
+    alignItems: "center !important",
   },
   start_class_btn: {
     background: "#1bba68 !important",
@@ -62,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "capitalize !important",
     fontWeight: "600 !important",
     padding: "8px 25px !important",
+    borderRadius: "10px !important",
   },
   right_level_box: {
     marginTop: "80px",
@@ -75,12 +90,12 @@ const useStyles = makeStyles((theme) => ({
     clipPath: "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)",
   },
   sub_title: {
-    fontSize: "15px !important",
+    fontSize: "16px !important",
     fontWeight: "700 !important",
   },
   sub_box_hepler_second: {
     display: "flex !important",
-    justifyContent: "center !important",
+    justifyContent: "flex-end !important",
     alignItems: "center !important",
     flexDirection: "column !important",
   },
@@ -115,21 +130,33 @@ const useStyles = makeStyles((theme) => ({
   },
   helper_title_outof_text: {
     fontWeight: "nomral !important",
-    fontSize: "12px !important",
+    fontSize: "13px !important",
     color: "silver !important",
+    textShadow: "0 0 black !important",
   },
   calendar: {
     border: "none !important",
   },
   upcomming_cls: {
-    fontSize: "30px !important",
-    fontWeight: "600 !important",
+    fontSize: "32px !important",
+    fontWeight: "700 !important",
     marginBottom: "0 !important",
   },
   date_time_text: {
     fontWeight: "nomral !important",
     fontSize: "14px !important",
     color: "#a09c9c !important",
+  },
+  classes_sub_text: {
+    fontWeight: "nomral !important",
+    fontSize: "16px !important",
+    color: "#a09c9c !important",
+  },
+  total_classes_sub_text: {
+    fontWeight: "nomral !important",
+    fontSize: "16px !important",
+    color: "black !important",
+    fontWeight: "600 !important",
   },
   topic_name: {
     fontWeight: "nomral !important",
@@ -148,15 +175,98 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "capitalize !important",
     fontWeight: "600 !important",
     padding: "8px 25px !important",
+    borderRadius: "10px !important",
     position: "relative",
     top: "160px",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "50px !important",
+      top: "0 !important",
+    },
   },
   calendar_section: {
     paddingLeft: "24px",
-    marginTop:"30px",
+    marginTop: "30px",
     [theme.breakpoints.down("sm")]: {
       paddingLeft: "0",
     },
+  },
+  sub_title_2: {
+    fontSize: "16px !important",
+    fontWeight: "700 !important",
+  },
+  buy_more_btn_div: {
+    display: "flex !important",
+    justifyContent: "flex-end !important",
+    alignItems: "center !important",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "50px !important",
+    },
+  },
+  bottom_classes_button_div: {
+    display: "flex !important",
+    justifyContent: "space-between !important",
+    alignItems: "center !important",
+  },
+  top_box_classes: {
+    display: "flex !important",
+    justifyContent: "space-between !important",
+    alignItems: "center !important",
+  },
+  buy_now_btn: {
+    background: "#4651d0 !important",
+    fontSize: "12px !important",
+    textTransform: "capitalize !important",
+    fontWeight: "600 !important",
+    padding: "8px 25px !important",
+    borderRadius: "10px !important",
+  },
+  start_class_bottom_btn: {
+    background: "#48c5c5 !important",
+    fontSize: "12px !important",
+    textTransform: "capitalize !important",
+    fontWeight: "600 !important",
+    padding: "8px 25px !important",
+    borderRadius: "10px !important",
+  },
+  chat_heading: {
+    color: "#7f437f",
+    fontSize: "24px !important",
+    fontWeight: "600 !important",
+  },
+  card_content: {
+    padding: "15px 20px",
+    margin: "8px",
+    background: "#f1f1f2 !important",
+    borderRadius: "15px",
+  },
+  sub_box_hepler_date: {
+    display: "flex !important",
+    marginTop: "15px !important",
+    paddingBottom: "20px !important",
+  },
+  class_name_box: {
+    background: "#7f437f !important",
+    padding: "15px !important",
+    borderTopLeftRadius: "10px",
+    borderBottomLeftRadius: "10px",
+  },
+  class_name: {
+    color: "#fff",
+    fontSize: "14px !important",
+    fontWeight: "600 !important",
+    marginBottom: "0px !important",
+  },
+  class_bottom_section: {
+    paddingLeft: "24px",
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "0",
+    },
+  },
+  cancel_class: {
+    color: "#d35454 !important",
+    fontSize: "14px !important",
+    fontWeight: "600 !important",
+    cursor: "pointer",
   },
 }));
 
@@ -166,6 +276,25 @@ export default function Dashboard() {
   const { width } = useWindowDimensions();
   const [value, onChange] = useState(new Date());
 
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1324 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
   return (
     <>
       <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
@@ -255,19 +384,19 @@ export default function Dashboard() {
             <Grid container className={classes.right_level_box}>
               <Grid item xs={12} sm={12} md={3} lg={3}>
                 <Box className={classes.hex3}></Box>
-                <span>EXPLORER</span>
+                <span className={classes.explorer}>EXPLORER</span>
               </Grid>
               <Grid item xs={12} sm={12} md={3} lg={3}>
                 <Box className={classes.hex3}></Box>
-                <span>EXPLORER</span>
+                <span className={classes.explorer}>EXPLORER</span>
               </Grid>
               <Grid item xs={12} sm={12} md={3} lg={3}>
                 <Box className={classes.hex3}></Box>
-                <span>EXPLORER</span>
+                <span className={classes.explorer}>EXPLORER</span>
               </Grid>
               <Grid item xs={12} sm={12} md={3} lg={3}>
                 <Box className={classes.hex3}></Box>
-                <span>EXPLORER</span>
+                <span className={classes.explorer}>EXPLORER</span>
               </Grid>
             </Grid>
           </Grid>
@@ -486,7 +615,7 @@ export default function Dashboard() {
                       trailWidth={10}
                       strokeWidth={6}
                       percent={100}
-                      strokeColor="#242F9B"
+                      strokeColor="#4651d0"
                     />
                   </Box>
                   <Typography
@@ -591,100 +720,646 @@ export default function Dashboard() {
         </Grid>
 
         <Grid className={classes.calendar_section}>
-        <Grid container sx={{ boxShadow: 1, p: 2, borderRadius: 3, }}>
-          <Grid item md={6} lg={6} sm={6}>
-            <Box>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                component="div"
-                className={classes.sub_title}
+          <Grid sx={{ background: "#fff5f0" }}>
+            <Grid
+              container
+              sx={{ boxShadow: 1, pl: 5, pr: 5, pt: 3, pb: 3, borderRadius: 3 }}
+            >
+              <Grid item md={6} lg={6} sm={6}>
+                <Box>
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    component="div"
+                    className={classes.sub_title_2}
+                  >
+                    Your course will be expire soon{" "}
+                    <Button
+                      size="small"
+                      variant="contained"
+                      sx={{
+                        borderRadius: 5,
+                        fontSize: "10px",
+                        textTransform: "capitalize",
+                        ml: 2,
+                        background: "red",
+                        boxShadow: "0",
+                      }}
+                    >
+                      Only 6 classes left
+                    </Button>
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    component="div"
+                    className={classes.text_description}
+                  >
+                    Renew{" "}
+                    <span
+                      style={{
+                        color: "#7f437f",
+                        fontWeight: "bold",
+                        cursor: "pointer",
+                      }}
+                    >
+                      your plan now
+                    </span>{" "}
+                    or Request a call back from us
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                md={6}
+                lg={6}
+                sm={6}
+                className={classes.buy_more_btn_div}
               >
-                Your course will be expire soon{" "}
-                <Button
-                  size="small"
-                  variant="contained"
-                  color="error"
-                  sx={{
-                    borderRadius: 5,
-                    fontSize: "10px",
-                    textTransform: "capitalize",
-                    ml: 2,
-                  }}
-                >
-                  Only 6 classes left
-                </Button>
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                component="div"
-                className={classes.text_description}
-              >
-                Renew your plan now or Request a call back from us
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item md={6} lg={6} sm={6}>
-            <Box>
-              <Button size="small" variant="contained" color="error">
-                <PhoneInTalkIcon fontSize="small" /> Buy More Classes
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
-
-        <Grid>
-          <Typography variant="subtitle1" gutterBottom component="div">
-            Classes
-          </Typography>
-          <Grid container sx={{ boxShadow: 2, p: 2 }}>
-            <Grid item md={4} sm={12} lg={4} xs={12}>
-              <Typography variant="h5" gutterBottom component="div">
-                Classes Summary
-              </Typography>
-              <Typography variant="subtitle1" gutterBottom component="div">
-                A quick overview of your classes
-              </Typography>
+                <Box>
+                  <Button
+                    size="small"
+                    variant="contained"
+                    className={classes.buy_now_btn}
+                  >
+                    <PhoneInTalkIcon sx={{ mr: 1 }} fontSize="small" /> Buy More
+                    Classes
+                  </Button>
+                </Box>
+              </Grid>
             </Grid>
-            <Grid item md={8} sm={12} lg={8} xs={12}>
-              <Grid container>
-                <Grid item md={3} lg={3} sm={3} xs={12}>
-                  <Typography variant="h5" gutterBottom component="div">
-                    300
-                  </Typography>
-                  <Typography variant="subtitle1" gutterBottom component="div">
-                    Total Classes
-                  </Typography>
-                </Grid>
-                <Grid item md={3} lg={3} sm={3} xs={12}>
-                  <Typography variant="h5" gutterBottom component="div">
-                    <CheckCircleOutlineIcon fontSize="small" /> 29
-                  </Typography>
-                  <Typography variant="subtitle1" gutterBottom component="div">
-                    Completed
-                  </Typography>
-                </Grid>
-                <Grid item md={3} lg={3} sm={3} xs={12}>
-                  <Typography variant="h5" gutterBottom component="div">
-                    <AccessTimeIcon fontSize="small" /> 12
-                  </Typography>
-                  <Typography variant="subtitle1" gutterBottom component="div">
-                    Scheduled
-                  </Typography>
-                </Grid>
-                <Grid item md={3} lg={3} sm={3} xs={12}>
-                  <Typography variant="h5" gutterBottom component="div">
-                    <AvTimerIcon fontSize="small" /> 259
-                  </Typography>
-                  <Typography variant="subtitle1" gutterBottom component="div">
-                    Reaming
-                  </Typography>
+          </Grid>
+          <Grid sx={{ mt: 5, pb: 5 }}>
+            <Typography
+              className={classes.sub_title}
+              sx={{ mb: 2 }}
+              variant="subtitle1"
+              gutterBottom
+              component="div"
+            >
+              Classes
+            </Typography>
+            <Grid
+              container
+              sx={{ boxShadow: 2, pl: 5, pr: 5, pt: 2, pb: 2, borderRadius: 3 }}
+            >
+              <Grid item md={4} sm={12} lg={4} xs={12}>
+                <Typography
+                  variant="h5"
+                  sx={{ fontWeight: "bold" }}
+                  gutterBottom
+                  component="div"
+                >
+                  Classes Summary
+                </Typography>
+                <Typography
+                  className={classes.classes_sub_text}
+                  variant="subtitle1"
+                  gutterBottom
+                  component="div"
+                >
+                  A quick overview of your classes
+                </Typography>
+              </Grid>
+              <Grid item md={8} sm={12} lg={8} xs={12}>
+                <Grid container>
+                  <Grid item md={3} lg={3} sm={6} xs={6}>
+                    <Typography
+                      className={classes.upcomming_cls}
+                      variant="h5"
+                      gutterBottom
+                      component="div"
+                    >
+                      300
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                      className={classes.total_classes_sub_text}
+                    >
+                      Total Classes
+                    </Typography>
+                  </Grid>
+                  <Grid item md={3} lg={3} sm={6} xs={6}>
+                    <Typography
+                      className={classes.upcomming_cls}
+                      variant="h5"
+                      gutterBottom
+                      component="div"
+                    >
+                      <CheckCircleOutlineIcon fontSize="medium" /> 29
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                      className={classes.classes_sub_text}
+                    >
+                      Completed
+                    </Typography>
+                  </Grid>
+                  <Grid item md={3} lg={3} sm={6} xs={6}>
+                    <Typography
+                      className={classes.upcomming_cls}
+                      variant="h5"
+                      gutterBottom
+                      component="div"
+                    >
+                      <AccessTimeIcon fontSize="medium" /> 12
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                      className={classes.classes_sub_text}
+                    >
+                      Scheduled
+                    </Typography>
+                  </Grid>
+                  <Grid item md={3} lg={3} sm={6} xs={6}>
+                    <Typography
+                      className={classes.upcomming_cls}
+                      variant="h5"
+                      gutterBottom
+                      component="div"
+                    >
+                      <AvTimerIcon fontSize="medium" /> 259
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                      className={classes.classes_sub_text}
+                    >
+                      Reaming
+                    </Typography>
+                  </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
+
+        <Grid className={classes.class_bottom_section} sx={{ pb: 5 }}>
+          <Grid>
+            <Carousel responsive={responsive}>
+              <Card
+                sx={{
+                  maxWidth: 300,
+                  boxShadow: 3,
+                  borderRadius: 5,
+                  mt: 2,
+                  ml: 1,
+                }}
+              >
+                <Box className={classes.top_box_classes}>
+                  <Box sx={{ ml: 2, mr: 2 }}>
+                    <Box className={classes.sub_box_hepler_date}>
+                      <Box>
+                        <CalendarMonthIcon sx={{ mt: 1 }} fontSize="medium" />
+                      </Box>
+                      <Box sx={{ ml: 1 }}>
+                        <Typography
+                          className={classes.upcomming_cls}
+                          variant="h5"
+                          gutterBottom
+                          component="div"
+                        >
+                          25{" "}
+                          <span className={classes.helper_title_outof_text}>
+                            DEC
+                          </span>
+                        </Typography>
+                        <Typography
+                          className={classes.helper_title_outof_text}
+                          variant="subititle1"
+                          gutterBottom
+                          component="div"
+                        >
+                          4:00-5:00 pm
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+
+                  <Box className={classes.class_name_box}>
+                    <Typography
+                      className={classes.class_name}
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                    >
+                      Class 41
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box>
+                  <Box className={classes.card_content}>
+                    <Typography
+                      className={classes.chat_heading}
+                      variant="h5"
+                      gutterBottom
+                      component="div"
+                      sx={{ mb: 3 }}
+                    >
+                      How to Interect with chatbot
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                      className={classes.text_description}
+                    >
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the
+                    </Typography>
+
+                    <Box
+                      className={classes.bottom_classes_button_div}
+                      sx={{ mt: 5 }}
+                    >
+                      <Box>
+                        <Avatar
+                          alt="Remy Sharp"
+                          src="/images/user.jpg"
+                          sx={{ width: 38, height: 38 }}
+                        />
+                      </Box>
+                      <Box>
+                        <Button
+                          className={classes.start_class_bottom_btn}
+                          variant="contained"
+                          color="primary"
+                        >
+                          <VideocamIcon fontSize="small" sx={{ mr: 1 }} /> Start
+                          A Class
+                        </Button>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </Card>
+              <Card
+                sx={{ maxWidth: 300, boxShadow: 3, borderRadius: 5, mt: 2 }}
+              >
+                <Box className={classes.top_box_classes}>
+                  <Box sx={{ ml: 2, mr: 2 }}>
+                    <Box className={classes.sub_box_hepler_date}>
+                      <Box>
+                        <EventIcon sx={{ mt: 1 }} fontSize="medium" />
+                      </Box>
+                      <Box sx={{ ml: 1 }}>
+                        <Typography
+                          className={classes.upcomming_cls}
+                          variant="h5"
+                          gutterBottom
+                          component="div"
+                        >
+                          25{" "}
+                          <span className={classes.helper_title_outof_text}>
+                            DEC
+                          </span>
+                        </Typography>
+                        <Typography
+                          className={classes.helper_title_outof_text}
+                          variant="subititle1"
+                          gutterBottom
+                          component="div"
+                        >
+                          4:00-5:00 pm
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+
+                  <Box className={classes.class_name_box}>
+                    <Typography
+                      className={classes.class_name}
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                    >
+                      Class 41
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box>
+                  <Box className={classes.card_content}>
+                    <Typography
+                      className={classes.chat_heading}
+                      variant="h5"
+                      gutterBottom
+                      component="div"
+                      sx={{ mb: 3 }}
+                    >
+                      How to Interect with chatbot
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                      className={classes.text_description}
+                    >
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the
+                    </Typography>
+
+                    <Box
+                      className={classes.bottom_classes_button_div}
+                      sx={{ mt: 5 }}
+                    >
+                      <Box>
+                        <Avatar
+                          alt="Remy Sharp"
+                          src="/images/user.jpg"
+                          sx={{ width: 38, height: 38 }}
+                        />
+                      </Box>
+                      <Box>
+                        <Typography
+                          variant="subtitle1"
+                          gutterBottom
+                          component="div"
+                          className={classes.cancel_class}
+                        >
+                          Cancel Class
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </Card>
+              <Card
+                sx={{ maxWidth: 300, boxShadow: 3, borderRadius: 5, mt: 2 }}
+              >
+                <Box className={classes.top_box_classes}>
+                  <Box sx={{ ml: 2, mr: 2 }}>
+                    <Box className={classes.sub_box_hepler_date}>
+                      <Box>
+                        <EventIcon sx={{ mt: 1 }} fontSize="medium" />
+                      </Box>
+                      <Box sx={{ ml: 1 }}>
+                        <Typography
+                          className={classes.upcomming_cls}
+                          variant="h5"
+                          gutterBottom
+                          component="div"
+                        >
+                          25{" "}
+                          <span className={classes.helper_title_outof_text}>
+                            DEC
+                          </span>
+                        </Typography>
+                        <Typography
+                          className={classes.helper_title_outof_text}
+                          variant="subititle1"
+                          gutterBottom
+                          component="div"
+                        >
+                          4:00-5:00 pm
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+
+                  <Box className={classes.class_name_box}>
+                    <Typography
+                      className={classes.class_name}
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                    >
+                      Class 41
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box>
+                  <Box className={classes.card_content}>
+                    <Typography
+                      className={classes.chat_heading}
+                      variant="h5"
+                      gutterBottom
+                      component="div"
+                      sx={{ mb: 3 }}
+                    >
+                      How to Interect with chatbot
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                      className={classes.text_description}
+                    >
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the
+                    </Typography>
+
+                    <Box
+                      className={classes.bottom_classes_button_div}
+                      sx={{ mt: 5 }}
+                    >
+                      <Box>
+                        <Avatar
+                          alt="Remy Sharp"
+                          src="/images/user.jpg"
+                          sx={{ width: 38, height: 38 }}
+                        />
+                      </Box>
+                      <Box>
+                        <Typography
+                          variant="subtitle1"
+                          gutterBottom
+                          component="div"
+                          className={classes.cancel_class}
+                        >
+                          Cancel Class
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </Card>
+              <Card
+                sx={{ maxWidth: 300, boxShadow: 3, borderRadius: 5, mt: 2 }}
+              >
+                <Box className={classes.top_box_classes}>
+                  <Box sx={{ ml: 2, mr: 2 }}>
+                    <Box className={classes.sub_box_hepler_date}>
+                      <Box>
+                        <EventIcon sx={{ mt: 1 }} fontSize="medium" />
+                      </Box>
+                      <Box sx={{ ml: 1 }}>
+                        <Typography
+                          className={classes.upcomming_cls}
+                          variant="h5"
+                          gutterBottom
+                          component="div"
+                        >
+                          25{" "}
+                          <span className={classes.helper_title_outof_text}>
+                            DEC
+                          </span>
+                        </Typography>
+                        <Typography
+                          className={classes.helper_title_outof_text}
+                          variant="subititle1"
+                          gutterBottom
+                          component="div"
+                        >
+                          4:00-5:00 pm
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+
+                  <Box className={classes.class_name_box}>
+                    <Typography
+                      className={classes.class_name}
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                    >
+                      Class 41
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box>
+                  <Box className={classes.card_content}>
+                    <Typography
+                      className={classes.chat_heading}
+                      variant="h5"
+                      gutterBottom
+                      component="div"
+                      sx={{ mb: 3 }}
+                    >
+                      How to Interect with chatbot
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                      className={classes.text_description}
+                    >
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the
+                    </Typography>
+
+                    <Box
+                      className={classes.bottom_classes_button_div}
+                      sx={{ mt: 5 }}
+                    >
+                      <Box>
+                        <Avatar
+                          alt="Remy Sharp"
+                          src="/images/user.jpg"
+                          sx={{ width: 38, height: 38 }}
+                        />
+                      </Box>
+                      <Box>
+                        <Typography
+                          variant="subtitle1"
+                          gutterBottom
+                          component="div"
+                          className={classes.cancel_class}
+                        >
+                          Cancel Class
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </Card>
+              <Card sx={{ maxWidth: 300, boxShadow: 3, borderRadius: 5 }}>
+                <Box className={classes.top_box_classes}>
+                  <Box sx={{ ml: 2, mr: 2 }}>
+                    <Box className={classes.sub_box_hepler_date}>
+                      <Box>
+                        <EventIcon sx={{ mt: 1 }} fontSize="medium" />
+                      </Box>
+                      <Box sx={{ ml: 1 }}>
+                        <Typography
+                          className={classes.upcomming_cls}
+                          variant="h5"
+                          gutterBottom
+                          component="div"
+                        >
+                          25{" "}
+                          <span className={classes.helper_title_outof_text}>
+                            DEC
+                          </span>
+                        </Typography>
+                        <Typography
+                          className={classes.helper_title_outof_text}
+                          variant="subititle1"
+                          gutterBottom
+                          component="div"
+                        >
+                          4:00-5:00 pm
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+
+                  <Box className={classes.class_name_box}>
+                    <Typography
+                      className={classes.class_name}
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                    >
+                      Class 41
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box>
+                  <Box className={classes.card_content}>
+                    <Typography
+                      className={classes.chat_heading}
+                      variant="h5"
+                      gutterBottom
+                      component="div"
+                      sx={{ mb: 3 }}
+                    >
+                      How to Interect with chatbot
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      component="div"
+                      className={classes.text_description}
+                    >
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the
+                    </Typography>
+
+                    <Box
+                      className={classes.bottom_classes_button_div}
+                      sx={{ mt: 5 }}
+                    >
+                      <Box>
+                        <Avatar
+                          alt="Remy Sharp"
+                          src="/images/user.jpg"
+                          sx={{ width: 38, height: 38 }}
+                        />
+                      </Box>
+                      <Box>
+                        <Typography
+                          variant="subtitle1"
+                          gutterBottom
+                          component="div"
+                          className={classes.cancel_class}
+                        >
+                          Cancel Class
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </Card>
+            </Carousel>
+          </Grid>
         </Grid>
       </div>
     </>
