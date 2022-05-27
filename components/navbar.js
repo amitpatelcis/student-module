@@ -139,7 +139,19 @@ export default function Navbar(props) {
             <Link href={"/student/edit-profile"}>
               <Typography className={classes.option}>
                 <FontAwesomeIcon className={classes.icon} icon={faChalkboard} />{" "}
-                Update Profile
+                Manage Profile
+              </Typography>
+            </Link>
+            <Link href={"#"}>
+              <Typography className={classes.option}>
+                <FontAwesomeIcon className={classes.icon} icon={faChalkboard} />{" "}
+                Contact Customer Care
+              </Typography>
+            </Link>
+            <Link href={"#"}>
+              <Typography className={classes.option}>
+                <FontAwesomeIcon className={classes.icon} icon={faChalkboard} />{" "}
+                Upgrade Subscription
               </Typography>
             </Link>
             <Link href={"/student/login"}>
