@@ -589,17 +589,27 @@ export default function Dashboard() {
           </Grid>
         </Grid>
 
-        <Grid container>
+        <Grid container sx={{ boxShadow: 1, p: 2, borderRadius: 3, m: 3 }}>
           <Grid item md={6} lg={6} sm={6}>
             <Box>
               <Typography
                 variant="subtitle1"
                 gutterBottom
                 component="div"
-                className={classes.helper_title}
+                className={classes.sub_title}
               >
                 Your course will be expire soon{" "}
-                <Button size="small" variant="contained" color="error">
+                <Button
+                  size="small"
+                  variant="contained"
+                  color="error"
+                  sx={{
+                    borderRadius: 5,
+                    fontSize: "10px",
+                    textTransform: "capitalize",
+                    ml: 2,
+                  }}
+                >
                   Only 6 classes left
                 </Button>
               </Typography>
@@ -607,7 +617,7 @@ export default function Dashboard() {
                 variant="subtitle1"
                 gutterBottom
                 component="div"
-                className={classes.helper_title}
+                className={classes.text_description}
               >
                 Renew your plan now or Request a call back from us
               </Typography>
