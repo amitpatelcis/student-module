@@ -159,16 +159,6 @@ export default function Sidebar() {
                   </div>
                 </div>
               </Link>
-              <Link href="#">
-                <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-1  cursor-pointer mb-2">
-                  <div className="flex items-center">
-                    <FontAwesomeIcon icon={faGraduationCap} />
-                  </div>
-                  <div className="flex items-center">
-                    Receive Assignment and Progress Report
-                  </div>
-                </div>
-              </Link>
             </AccordionDetails>
           </Accordion>
 
@@ -199,48 +189,20 @@ export default function Sidebar() {
                   <div className="flex items-center">
                     <FontAwesomeIcon icon={faCalendarCheck} />
                   </div>
-                  <div className="flex items-center">
-                    Get Rewards and Recongnition
-                  </div>
-                </div>
-              </Link>
-              <Link href="#">
-                <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-1  cursor-pointer mb-2">
-                  <div className="flex items-center">
-                    <FontAwesomeIcon icon={faGraduationCap} />
-                  </div>
-                  <div className="flex items-center">
-                    Receive Assignment and Progress Report
-                  </div>
+                  <div className="flex items-center">Redeem Rewards</div>
                 </div>
               </Link>
             </AccordionDetails>
           </Accordion>
 
-          <Accordion sx={{ boxShadow: 0 }}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg cursor-pointer">
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faPeopleArrowsLeftRight} />
-                </div>
-                <div className="flex items-center">Contact Trainer</div>
+          <Link href="#">
+            <div className="flex gap-2 ml-1 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-3 cursor-pointer mb-1">
+              <div className="flex items-center">
+                <FontAwesomeIcon icon={faPeopleArrowsLeftRight} />
               </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Link href="#">
-                <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-1 cursor-pointer mb-1">
-                  <div className="flex items-center">
-                    <FontAwesomeIcon icon={faPeopleArrowsLeftRight} />
-                  </div>
-                  <div className="flex items-center">Contact Trainer</div>
-                </div>
-              </Link>
-            </AccordionDetails>
-          </Accordion>
+              <div className="flex items-center">Contact Trainer</div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

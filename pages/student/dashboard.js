@@ -96,6 +96,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "16px !important",
     fontWeight: "700 !important",
   },
+  sub_title_upcoming_class: {
+    fontSize: "16px !important",
+    fontWeight: "700 !important",
+    marginBottom: "0 !important",
+  },
   sub_box_hepler_second: {
     display: "flex !important",
     justifyContent: "flex-end !important",
@@ -149,6 +154,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "nomral !important",
     fontSize: "14px !important",
     color: "#a09c9c !important",
+    marginBottom: "0 !important",
   },
   classes_sub_text: {
     fontWeight: "nomral !important",
@@ -385,7 +391,7 @@ export default function Dashboard() {
                 </Box>
               </Box>
             </Grid>
-            <Grid container className={classes.right_level_box}>
+            {/* <Grid container className={classes.right_level_box}>
               <Grid item xs={6} sm={12} md={3} lg={3}>
                 <Box className={classes.hex3}></Box>
                 <div className={classes.explorer}>EXPLORER</div>
@@ -402,7 +408,7 @@ export default function Dashboard() {
                 <Box className={classes.hex3}></Box>
                 <div className={classes.explorer}>EXPLORER</div>
               </Grid>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
 
@@ -545,7 +551,7 @@ export default function Dashboard() {
                   component="div"
                   className={classes.sub_title}
                 >
-                  My Calendar
+                  Classes
                 </Typography>
                 <Box>
                   <Calendar
@@ -654,9 +660,9 @@ export default function Dashboard() {
               mt: 3,
             }}
           >
-            <Box sx={{ p: 2 }} className={classes.uncomming_class_section}>
+            <Box sx={{ pl: 2,pr:2,pt:1,pb:1 }} className={classes.uncomming_class_section}>
               <Typography
-                className={classes.sub_title}
+                className={classes.sub_title_upcoming_class}
                 variant="h5"
                 gutterBottom
                 component="div"
@@ -724,7 +730,7 @@ export default function Dashboard() {
         </Grid>
 
         <Grid className={classes.calendar_section}>
-          <Grid sx={{ background: "#fff5f0" }}>
+          {/* <Grid sx={{ background: "#fff5f0" }}>
             <Grid
               container
               sx={{ boxShadow: 1, pl: 5, pr: 5, pt: 3, pb: 3, borderRadius: 3 }}
@@ -792,7 +798,7 @@ export default function Dashboard() {
                 </Box>
               </Grid>
             </Grid>
-          </Grid>
+          </Grid> */}
           <Grid sx={{ mt: 5, pb: 5 }}>
             <Typography
               className={classes.sub_title}
@@ -896,7 +902,7 @@ export default function Dashboard() {
                       component="div"
                       className={classes.classes_sub_text}
                     >
-                      Reaming
+                      Remaining
                     </Typography>
                   </Grid>
                 </Grid>
@@ -905,7 +911,7 @@ export default function Dashboard() {
           </Grid>
         </Grid>
 
-        <Grid className={classes.class_bottom_section} sx={{ pb: 5 }}>
+        {/* <Grid className={classes.class_bottom_section} sx={{ pb: 5 }}>
           <Grid>
             <Carousel responsive={responsive}>
               <Card
@@ -1364,7 +1370,7 @@ export default function Dashboard() {
               </Card>
             </Carousel>
           </Grid>
-        </Grid>
+        </Grid> */}
       </div>
     </>
   );
