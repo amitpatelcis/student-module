@@ -151,7 +151,7 @@ export default function Login() {
               textAlign={"left"}
               // textAlign={"left"}
             >
-              <FontAwesomeIcon icon={faChalkboard} /> kaizen Academy
+              <FontAwesomeIcon icon={faChalkboard} /> Kapable
             </Typography>
             <Grid className={classes.login_part}>
               <Typography

@@ -26,6 +26,7 @@
     "react-big-calendar": "0.19.2",
     "react-calendar": "^3.7.0",
     "react-dom": "18.1.0",
+    "react-mui-dropzone": "^4.0.6",
     "react-multi-carousel": "^2.8.0",
     "react-responsive-modal": "^6.2.0"
   },

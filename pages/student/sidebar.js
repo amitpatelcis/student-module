@@ -57,7 +57,7 @@ export default function Sidebar() {
               </div>
             </AccordionSummary>
             <AccordionDetails>
-              <Link href="#">
+              <Link href="/student/submit-assignment">
                 <div className="flex gap-2 item-center w-full hover:bg-[#ede7f6] hover:text-[#673ab7] rounded-lg p-1  cursor-pointer mb-2">
                   <div className="flex items-center">
                     <FontAwesomeIcon icon={faChalkboard} />

@@ -37,12 +37,15 @@ const useStyles = makeStyles((theme) => ({
   explorer: {
     background: "black !important",
     color: "white !important",
-    padding: "5px 13px !important",
-    fontSize: "14px !important",
+    padding: "2px 13px !important",
+    fontSize: "13px !important",
     fontWeight: " 500 !important",
     borderRadius: "7px !important",
     position: "relative !important",
-    bottom: "22px !important",
+    bottom: "40px !important",
+    textAlign: "center",
+    transform: "rotate(-9deg)",
+    width: "94px",
   },
   name: {
     color: "#7f437f",
@@ -349,7 +352,8 @@ export default function Dashboard() {
                 component="div"
                 className={classes.text_description}
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
+                Lorem Ipsum is simply dummy text of the printing and typesetting{" "}
+                <br />
                 industry. Lorem Ipsum has been the
               </Typography>
             </Grid>
@@ -382,21 +386,21 @@ export default function Dashboard() {
               </Box>
             </Grid>
             <Grid container className={classes.right_level_box}>
-              <Grid item xs={12} sm={12} md={3} lg={3}>
+              <Grid item xs={6} sm={12} md={3} lg={3}>
                 <Box className={classes.hex3}></Box>
-                <span className={classes.explorer}>EXPLORER</span>
+                <div className={classes.explorer}>EXPLORER</div>
               </Grid>
-              <Grid item xs={12} sm={12} md={3} lg={3}>
+              <Grid item xs={6} sm={12} md={3} lg={3}>
                 <Box className={classes.hex3}></Box>
-                <span className={classes.explorer}>EXPLORER</span>
+                <div className={classes.explorer}>EXPLORER</div>
               </Grid>
-              <Grid item xs={12} sm={12} md={3} lg={3}>
+              <Grid item xs={6} sm={12} md={3} lg={3}>
                 <Box className={classes.hex3}></Box>
-                <span className={classes.explorer}>EXPLORER</span>
+                <div className={classes.explorer}>EXPLORER</div>
               </Grid>
-              <Grid item xs={12} sm={12} md={3} lg={3}>
+              <Grid item xs={6} sm={12} md={3} lg={3}>
                 <Box className={classes.hex3}></Box>
-                <span className={classes.explorer}>EXPLORER</span>
+                <div className={classes.explorer}>EXPLORER</div>
               </Grid>
             </Grid>
           </Grid>
